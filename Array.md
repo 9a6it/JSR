@@ -16,6 +16,8 @@
 
 #### [`filter()`](#filter) ES5
 
+#### [`find()`](#find) ES6
+
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
 ```js
@@ -46,7 +48,7 @@ console.log(arr); // ['elem1', 'elem2']
 #### `at()`
 Возвращает элемент массива с заданным индексом.
 ```js
-arr.at(index)
+arr.at(i)
 ```
 ```js
 const arr = ['elem1', 'elem2', 'elem3'];
@@ -115,7 +117,7 @@ console.log(isAllAdult); // true
 #### `fill()`
 Заполняет все элементы массива от начального до конечного индексов одним значением.
 ```js
-arr.fill(value*, startIndex, endIndexAfter)
+arr.fill(value*, [startIndex = 0, endIndexAfter = arr.length))
 ```
 ```js
 const arr = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5'];
@@ -134,5 +136,9 @@ arr.filter((elem*, i, arr) => { ... })
 ```
 ```js
 const arr = ['elem1', 'elem2', 'elem3', 1, 2, 3, true, false]
-const filteredArr = arr.filter(elem => (typeof elem === 'number') && (typeof elem === 'boolean'));
-console.log(filteredArr);
+const filteredArr = arr.filter(elem => typeof elem === 'number');
+console.log(filteredArr); // [1, 2, 3]
+```
+
+#### `find()`
+Возвращает значение первого найденного в массиве элемента, которое удовлетворяет условию переданному в функции. В противном случае возвращается `undefined`.
