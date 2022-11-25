@@ -13,8 +13,9 @@
 [**`findIndex()`**](#findindex) | `arr.findIndex((elem*, i, arr) => { ... })`
 [**`findLast()`**](#findlast) | `arr.findLast((elem*, i, arr) => { ... })`
 [**`findLastIndex()`**](#findlastindex) | `arr.findLastIndex((elem*, i, arr) => { ... })`
-[**`flat()`**](flat) | `arr.flat()`, `arr.flat(depth)`
-[**`forEach()`**](#foreach) | 
+[**`flat()`**](#flat) | `arr.flat()`, `arr.flat(depth)`
+[**`flatMap()`**](#flatmap) | `arr.flatMap((elem*, i, arr) => { ... })`
+[**`forEach()`**](#foreach) | `arr.forEach((elem*, i, arr) => { ... })`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -158,10 +159,10 @@ console.log(flatArr); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 #### `flatMap()`
-Возвращает массив, сформированный путем применения заданной функции к каждому элементу массива, а затем сведения результата на один уровень. Идентичен `map()`, за которым следует `flat()` глубины (1), но немного более эффективен, чем вызов этих двух методов по отдельности - `arr.map(...args).flat()`. Но если глубина больше 1, то лучше сначала выровнить с помошью `flat(Infinity)`.
+Возвращает массив, сформированный путем применения заданной функции к каждому элементу массива, а затем сведения результата на один уровень. Идентичен `map()`, за которым следует `flat()` глубины (1), но немного более эффективен, чем вызов этих двух методов по отдельности - `arr.map(...args).flat()`. Но если глубина больше 1, то лучше сначала выровнить с помошью `flat()`.
 ```js
 const arr = [1, 2, [3], [4, 5], 6, []];
-const flatArr = arr.flatMap(elem => elem * 2);
+const flatArr = arr.flatMap(elem => elem);
 console.log(flatArr); // [1, 2, 3, 4, 5, 6]
 ```
 
