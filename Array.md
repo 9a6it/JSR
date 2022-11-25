@@ -8,7 +8,7 @@
 
 #### [`copyWithin()`](#copywithin) ES6
 
-#### [`entries()`] ES6
+#### [`entries()`](#entries) ES6
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
