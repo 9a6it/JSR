@@ -8,6 +8,8 @@
 
 #### [`copyWithin()`](#copywithin) ES6
 
+#### [`entries()`] ES6
+
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
 ```js
@@ -20,7 +22,7 @@ console.log(constructor); // function Array() { [native code] }
 ```
 
 #### `length`
-Устанавливает или возвращает количество элементов в массиве.
+Возвращает или устанавливает (меняет исходный массив) количество элементов в массиве.
 ```js
 arr.length
 arr.length = number
@@ -61,7 +63,7 @@ console.log(newArr); // ['elem1', 'elem2', 'elem3', 1, 2, 3, true, false, 'newEl
 ```
 
 #### `copyWithin()`
-Копирует элементы внутри массива, из указанного диапазона индексов, и вставляет, начиная с указанного индекса.
+Копирует элементы внутри массива (меняет исходный масив), из указанного диапазона индексов, и вставляет, начиная с указанного индекса.
 ```js
 arr.copyWithin(target*, [start = 0, end = arr.length))
 ```
@@ -77,4 +79,18 @@ console.log(arr); // ['elem3', 'elem4', 'elem5', 'elem4', 'elem5']
 const arr = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5'];
 arr.copyWithin(1, 2, 3);
 console.log(arr); // ['elem1', 'elem3', 'elem3', 'elem4', 'elem5']
+```
+
+#### `entries()`
+Возвращает объект итератора массива `Array Iterator`, который содержит пары ключ/значение по каждому индексу в массиве.
+```js
+arr.entries()
+```
+```js
+const arr = ['elem1', 'elem2', 'elem3'];
+const iterator = arr.entries();
+console.log(iterator); // Array Iterator {}
+for (let item of iterator) {
+  console.log(item); // [0, 'elem1'] [1, 'elem2'] [2, 'elem3']
+}
 ```
