@@ -10,6 +10,12 @@
 
 #### [`entries()`](#entries) ES6
 
+#### [`every()`](#every) ES5
+
+#### [`fill()`](#fill) ES6
+
+#### [`filter()`](#filter) ES5
+
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
 ```js
@@ -65,7 +71,7 @@ console.log(newArr); // ['elem1', 'elem2', 'elem3', 1, 2, 3, true, false, 'newEl
 #### `copyWithin()`
 Копирует элементы внутри массива (меняет исходный масив), из указанного диапазона индексов, и вставляет, начиная с указанного индекса.
 ```js
-arr.copyWithin(target*, [start = 0, end = arr.length))
+arr.copyWithin(startPasteIndex*, [startCopyIndex = 0, endCopyIndexAfter = arr.length))
 ```
 ```js
 const arr = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5'];
@@ -94,3 +100,39 @@ for (let item of iterator) {
   console.log(item); // [0, 'elem1'] [1, 'elem2'] [2, 'elem3']
 }
 ```
+
+#### `every()`
+Проверяет, удовлетворяют ли все элементы массива условию, заданному в передаваемой функции. Возвращает `true` при любом условии для *пустого* массива.
+```js
+arr.every((elem*, i, arr) => { ... })
+```
+```js
+const arr = [19, 21, 32, 24, 35];
+const isAllAdult = arr.every(elem => elem >= 18);
+console.log(isAllAdult); // true
+```
+
+#### `fill()`
+Заполняет все элементы массива от начального до конечного индексов одним значением.
+```js
+arr.fill(value*, startIndex, endIndexAfter)
+```
+```js
+const arr = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5'];
+arr.fill('newValue');
+console.log(arr); // ['newValue', 'newValue', 'newValue', 'newValue', 'newValue']
+
+const arr = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5'];
+arr.fill('newValue', 1, 4);
+console.log(arr); // ['elem1', 'newValue', 'newValue', 'newValue', 'elem5']
+```
+
+#### `filter()`
+Возвращает отфильтрованный массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.
+```js
+arr.filter((elem*, i, arr) => { ... })
+```
+```js
+const arr = ['elem1', 'elem2', 'elem3', 1, 2, 3, true, false]
+const filteredArr = arr.filter(elem => (typeof elem === 'number') && (typeof elem === 'boolean'));
+console.log(filteredArr);
