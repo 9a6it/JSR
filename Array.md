@@ -226,6 +226,5 @@ console.log(firstIndexOfElement); // 3
 ```js
 const arr = '1';
 const isArray = Array.isArray(arr);
-console.log(isArray); // true
+console.log(isArray); // false
 ```
-
