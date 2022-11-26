@@ -13,10 +13,13 @@
 [**`findIndex()`**](#findindex) | `arr.findIndex((el, i*, arr*) => { ... })`
 [**`findLast()`**](#findlast) | `arr.findLast((el, i*, arr*) => { ... })`
 [**`findLastIndex()`**](#findlastindex) | `arr.findLastIndex((el, i*, arr*) => { ... })`
-[**`flat()`**](#flat) | `arr.flat()`, `arr.flat(depth*)`
+[**`flat()`**](#flat) | `arr.flat(depth*)`
 [**`flatMap()`**](#flatmap) | `arr.flatMap((el, i*, arr*) => { ... })`
 [**`forEach()`**](#foreach) | `arr.forEach((el, i*, arr*) => { ... })`
 [**`from()`**](#from) | `Array.from(arr)`, `Array.from(arr, (el*, i*) => { ... })`
+[**`includes()`**](#includes) | `arr.includes(searchElement, startSearchIndex* = 0)`
+[**`indexOf()`**](#indexof) | `arr.includes(searchElement, startSearchIndex* = 0)`
+[**`Array.isArray()`**](#arrayisarray) | `Array.isArray(target)`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -189,7 +192,39 @@ const set = new Set(['el1', 'el2', 'el3']);
 const setToArr = Array.from(set);
 console.log(setToArr); // ['el1', 'el2', 'el3']
 
-const str = '12345';
+const str = 'ABCDE';
 const indexes = Array.from(str, (el, i) => i);
 console.log(indexes); // [0, 1, 2, 3, 4]
+```
 
+#### `includes()`
+Возвращает результат наличия искомого элемента в массиве.
+```js
+const arr = [1, true, NaN, 'el4'];
+const hasNan = arr.includes(NaN);
+console.log(hasNan); // true
+
+const arr = [1, true, NaN, 'el4'];
+const hasNan = arr.includes(NaN, -1);
+console.log(hasNan); // false
+```
+
+#### `indexOf()`
+Возвращает первый индекс, по которому данный элемент был найден в массиве или -1, если такого индекса нет. В отличие от `includes()`, для `NaN`, независимо от наличия будет возвращаться -1.
+```js
+const arr = [1, true, NaN, 'el4'];
+const firstIndexOfElement = arr.indexOf(NaN);
+console.log(firstIndexOfElement); // -1
+
+const arr = [1, true, NaN, 'el4'];
+const firstIndexOfElement = arr.indexOf('el4', 2);
+console.log(firstIndexOfElement); // 3
+```
+
+#### `Array.isArray()`
+Возвращает `true`, если объект является массивом и `false`, если он массивом не является.
+```
+const arr = '1';
+const isArray = Array.isArray(arr);
+console.log(isArray); // true
+```
