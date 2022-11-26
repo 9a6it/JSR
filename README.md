@@ -1,2 +1,2 @@
-#### [Array](Array.md)
-#### [Boolean](Boolean.md)
+* [**Array**](Array.md)
+* [**Boolean**](Boolean.md)
