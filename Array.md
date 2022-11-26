@@ -223,8 +223,9 @@ console.log(firstIndexOfElement); // 3
 
 #### `Array.isArray()`
 Возвращает `true`, если объект является массивом и `false`, если он массивом не является.
-```
+```js
 const arr = '1';
 const isArray = Array.isArray(arr);
 console.log(isArray); // true
 ```
+
