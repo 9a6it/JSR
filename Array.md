@@ -21,8 +21,9 @@
 [**`indexOf()`**](#indexof) | `arr.includes(searchElement, startSearchIndex* = 0)`
 [**`Array.isArray()`**](#arrayisarray) | `Array.isArray(target)`
 [**`join()`**](#join) | `arr.join(separator*)`
-[**`keys()`**](#keys) | `arr.join(separator*)`
-
+[**`keys()`**](#keys) | `arr.keys()`
+[**`lastIndexOf()`**](#lastindexof) | `arr.lastIndexOf(searchElement, startReverseSearchIndex* = arr.length)`
+[**`map()`**](#map) | `arr.map((el, i*, arr*) => { ... })`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -48,8 +49,8 @@ console.log(arr); // ['el1', 'el2']
 Возвращает элемент массива с заданным индексом.
 ```js
 const arr = ['el1', 'el2', 'el3'];
-const lastel = arr.at(-1);
-console.log(lastel); // 'el3'
+const lastEl = arr.at(-1);
+console.log(lastEl); // 'el3'
 ```
 
 #### `concat()`
@@ -58,8 +59,8 @@ console.log(lastel); // 'el3'
 const arr1 = ['el1', 'el2', 'el3'];
 const arr2 = [1, 2, 3];
 const arr3 = [true, false];
-const newArr = arr1.concat(arr2, arr3, 'newel');
-console.log(newArr); // ['el1', 'el2', 'el3', 1, 2, 3, true, false, 'newel']
+const newArr = arr1.concat(arr2, arr3, 'newEl');
+console.log(newArr); // ['el1', 'el2', 'el3', 1, 2, 3, true, false, 'newEl']
 ```
 
 #### `copyWithin()`
@@ -79,7 +80,7 @@ console.log(arr); // ['el1', 'el3', 'el3', 'el4', 'el5']
 ```
 
 #### `entries()`
-Возвращает объект итератора массива `Array Iterator`, который содержит пары ключ/значение для каждого индекса в массиве.
+Возвращает итератор массива `Array Iterator`, который содержит пары ключ/значение для каждого индекса в массиве.
 ```js
 const arr = ['el1', 'el2', 'el3'];
 const iterator = arr.entries();
@@ -249,5 +250,41 @@ console.log(arrToStr); // 'el1-el2-NaN--'
 ```
 
 #### `keys()`
-Возвращает новый итератор массива `Array Iterator`, содержащий ключи каждого индекса в массиве.
+Возвращает итератор массива `Array Iterator`, содержащий ключи каждого индекса в массиве.
+```js
+const arr = ['el1', 'el2'];
+const iterator = arr.keys();
+console.log(iterator); // Array Iterator {}
+console.log(iterator.next()); // { value: 0, done: false }
+console.log(iterator.next()); // { value: 1, done: false }
+console.log(iterator.next()); // { value: undefined, done: true }
 
+const arr = ['el1', 'el2', 'el3'];
+const iterator = arr.keys();
+for (const i of iterator) {
+  console.log(i); // 0 1 2
+}
+```
+
+#### `lastIndexOf()`
+Возвращает последний индекс, по которому данный элемент может быть найден в массиве или -1, если такого индекса нет. Массив просматривается от конца к началу.
+```js
+const arr = ['JS', 'HTML', 'JS', 'CSS'];
+const lastIndexOfElement = arr.lastIndexOf('JS');
+console.log(lastIndexOfElement); // 2
+const lastIndexOfElement = arr.lastIndexOf('JS', 1);
+console.log(lastIndexOfElement); // 0
+```
+
+#### `map()`
+Возвращает новый массив с результатом вызова указанной функции для каждого элемента массива.
+```js
+const arr = [4, 9, 16, 25];
+const newArr = arr.map(Math.sqrt);
+console.log(newArr); // [2, 3, 4, 5]
+
+const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
+const auxArr = arr.map(el => el.charAt(0).toUpperCase() + el.slice(1).toLowerCase());
+const newArr = auxArr.map(el => 'new' + el);
+console.log(newArr); // ['newEl1', 'newEl2', 'newEl3', 'newEl4', 'newEl5']
+```
