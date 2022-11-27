@@ -20,6 +20,9 @@
 [**`includes()`**](#includes) | `arr.includes(searchElement, startSearchIndex* = 0)`
 [**`indexOf()`**](#indexof) | `arr.includes(searchElement, startSearchIndex* = 0)`
 [**`Array.isArray()`**](#arrayisarray) | `Array.isArray(target)`
+[**`join()`**](#join) | `arr.join(separator*)`
+[**`keys()`**](#keys) | `arr.join(separator*)`
+
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -228,3 +231,23 @@ const arr = '1';
 const isArray = Array.isArray(arr);
 console.log(isArray); // false
 ```
+
+#### `join()`
+Возвращает, объединив все элементы массива (или массивоподобного объекта) в одну строку. Любой элемент массива, который имеет значение `undefined` или `null`, будет преобразован в пустую строку.
+```js
+const arr = [1, 2, 3, 4, 5];
+const arrToStr = arr.join();
+console.log(arrToStr); // '1,2,3,4,5'
+
+const arr = [1, 2, 3, 4, 5];
+const arrToStr = arr.join('');
+console.log(arrToStr); // '12345'
+
+const arr = ['el1', 'el2', NaN, null, undefined];
+const arrToStr = arr.join('-');
+console.log(arrToStr); // 'el1-el2-NaN--'
+```
+
+#### `keys()`
+Возвращает новый итератор массива `Array Iterator`, содержащий ключи каждого индекса в массиве.
+
