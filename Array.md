@@ -27,8 +27,7 @@
 [**`Array.of()`**](#arrayof) | `Array.of(el1, el2*, ..., elN*)`
 [**`pop()`**](#pop) | `arr.pop()`
 [**`push()`**](#push) | `arr.push(el1, el2*, ..., elN*)`
-[**`reduce()`**](#reduce) | `array.reduce((acc, el, i*, arr*) => { ... })`
-
+[**`reduce()`**](#reduce) | `arr.reduce((total, currentValue, currentIndex*, arr*) => { ... }, initialValue*)`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -323,8 +322,25 @@ console.log(addValue); // 2
 ```
 
 #### `reduce()`
-Применяет функцию `reducer` к каждому элементу массива (слева-направо), возвращая одно результирующее значение.
+Применяет функцию-редюсер к каждому элементу массива (слева-направо), возвращая одно результирующее значение.
 ```js
-const arr = [5, 5, 5];
-const sum = arr.reduce((acc, el, i, arr) => acc + el);
-console.log(sum); // 15
+const arr = [5, 10, 15];
+const sum = arr.reduce((acc, el) => acc + el);
+console.log(sum); // 30
+
+const arr = [5, 10, 15];
+const doubled = arr.reduce((acc, el) => {
+  acc.push(el * 2);
+  return acc;
+}, []);
+console.log(doubled); // [10, 20, 30]
+
+const bankAccounts = [
+  { id: "123", amount: 19 },
+  { id: "345", amount: 33 },
+  { id: "567", amount: 4 },
+  { id: "789", amount: 20 },
+];
+const totalAmount = bankAccounts.reduce((sum, currentAccount) => sum + currentAccount.amount, 0);
+console.log(totalAmount); // 76
+```
