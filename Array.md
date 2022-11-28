@@ -27,6 +27,8 @@
 [**`Array.of()`**](#arrayof) | `Array.of(el1, el2*, ..., elN*)`
 [**`pop()`**](#pop) | `arr.pop()`
 [**`push()`**](#push) | `arr.push(el1, el2*, ..., elN*)`
+[**`reduce()`**](#reduce) | `array.reduce((acc, el, i*, arr*) => { ... })`
+
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -320,4 +322,9 @@ const addValue = arr.push('el1', 'el2');
 console.log(addValue); // 2
 ```
 
-#### `
+#### `reduce()`
+Применяет функцию `reducer` к каждому элементу массива (слева-направо), возвращая одно результирующее значение.
+```js
+const arr = [5, 5, 5];
+const sum = arr.reduce((acc, el, i, arr) => acc + el);
+console.log(sum); // 15
