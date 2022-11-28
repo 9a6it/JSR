@@ -24,6 +24,9 @@
 [**`keys()`**](#keys) | `arr.keys()`
 [**`lastIndexOf()`**](#lastindexof) | `arr.lastIndexOf(searchElement, startReverseSearchIndex* = arr.length)`
 [**`map()`**](#map) | `arr.map((el, i*, arr*) => { ... })`
+[**`Array.of()`**](#arrayof) | `Array.of(el1, el2*, ..., elN*)`
+[**`pop()`**](#pop) | `arr.pop()`
+[**`push()`**](#push) | `arr.push(el1, el2*, ..., elN*)`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -288,3 +291,33 @@ const auxArr = arr.map(el => el.charAt(0).toUpperCase() + el.slice(1).toLowerCas
 const newArr = auxArr.map(el => 'new' + el);
 console.log(newArr); // ['newEl1', 'newEl2', 'newEl3', 'newEl4', 'newEl5']
 ```
+
+#### `Array.of()`
+Возвращает новый экземпляр массива `Array` из произвольного числа аргументов, вне зависимости от числа или типа аргумента.
+```js
+const newArr = Array.of(7);
+console.log(newArr); // [7], newArr.length = 1
+
+const newArr = Array.of(1, 2, 3);
+console.log(newArr); // [1, 2, 3], newArr.length = 3
+```
+
+#### `pop()`
+Удаляет последний элемент из массива и возвращает его значение.
+```js
+const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
+const delValue1 = arr.pop();
+console.log(delValue1); // el5
+const delValue2 = arr.pop();
+console.log(delValue2); // el4
+```
+
+#### `push()`
+Добавляет один или более элементов в конец массива и возвращает новую длину массива.
+```js
+const arr = [];
+const addValue = arr.push('el1', 'el2');
+console.log(addValue); // 2
+```
+
+#### `
