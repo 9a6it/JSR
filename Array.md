@@ -28,7 +28,10 @@
 [**`pop()`**](#pop) | `arr.pop()`
 [**`push()`**](#push) | `arr.push(el1, el2*, ..., elN*)`
 [**`reduce()`**](#reduce) | `arr.reduce((total, currentValue, currentIndex*, arr*) => { ... }, initialValue*)`
-[**`reduceRight()`**](#reduce) | `arr.reduceRight((total, currentValue, currentIndex*, arr*) => { ... }, initialValue*)`
+[**`reduceRight()`**](#reduceright) | `arr.reduceRight((total, currentValue, currentIndex*, arr*) => { ... }, initialValue*)`
+[**`reverse()`**](#reverse) | `arr.reverse()`
+[**`shift()`**](#shift) | `arr.shift()`
+[**`slice()`**](#slice) | `arr.slice(startCopyIndex* = 0, endCopyIndex* = arr.length)`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -349,3 +352,30 @@ console.log(totalAmount); // 76
 #### `reduceRight()`
 Применяет функцию-редюсер к каждому элементу массива (справа-налево), возвращая одно результирующее значение. Функция не будет вызвана для удалённых, или пропущенных элементов массива. Если массив имеет только один элемент (независимо от позиции) и не указано `initialValue` (значение, используемое в качестве первого аргумента первого вызова функции обратного вызова), или если `initialValue` предоставляется, но массив пуст, то значение этого элемента будет возвращено без вызова функции.
 ```js
+const arr = [5, 10, 15];
+const doubled = arr.reduceRight((acc, el) => {
+  acc.push(el * 2);
+  return acc;
+}, []);
+console.log(doubled); // [30, 20, 10]
+```
+
+#### `reverse()`
+Меняет массив, обращая порядок следования элементов массива наоборот. Первый элемент массива становится последним, а последний - первым.
+```js
+const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
+const reverseArr = arr.reverse();
+console.log(reverseArr); // ['el5', 'el4', 'el3', 'el2', 'el1']
+```
+
+#### `shift()`
+Меняет массив, удаляя первый элемент из массива и возвращает его значение. Этот метод меняет длину массива. Если длина массива равно `length = 0`, вернётся значение `undefined`.
+```js
+const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
+const delValue = arr.shift();
+console.log(delValue); // el1
+console.log(arr); // ['el2', 'el3', 'el4', 'el5']
+```
+
+#### `slice()`
+Возвращает новый массив, содержащий копию части исходного массива.
