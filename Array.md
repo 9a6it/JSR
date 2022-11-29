@@ -18,7 +18,7 @@
 [**`forEach()`**](#foreach) | `arr.forEach((el, i*, arr*) => { ... })`
 [**`from()`**](#from) | `Array.from(arr)`, `Array.from(arr, (el*, i*) => { ... })`
 [**`includes()`**](#includes) | `arr.includes(searchElement, startSearchIndex* = 0)`
-[**`indexOf()`**](#indexof) | `arr.includes(searchElement, startSearchIndex* = 0)`
+[**`indexOf()`**](#indexof) | `arr.indexOf(searchElement, startSearchIndex* = 0)`
 [**`Array.isArray()`**](#arrayisarray) | `Array.isArray(target)`
 [**`join()`**](#join) | `arr.join(separator*)`
 [**`keys()`**](#keys) | `arr.keys()`
