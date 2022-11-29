@@ -35,7 +35,8 @@
 [**`some()`**](#some) | `arr.some((el, i*, arr*) => { ... })`
 [**`sort()`**](#sort) | `arr.sort(compareFn*)`, `arr.sort((a, b) => a - b)`
 [**`splice()`**](#splice) | `arr.splice(startInsOrDelIndex, delQt, insEl1, insEl2, ..., insElN)`
-
+[**`toLocaleString()`**](#tolocalestring) | `arr.toLocaleString(locales*, options*)`
+[**`toString()`**](#tostring) | `arr.toString()`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -316,17 +317,17 @@ console.log(newArr); // [1, 2, 3], newArr.length = 3
 ```js
 const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
 const delValue1 = arr.pop();
-console.log(delValue1); // el5
+console.log(delValue1); // 'el5'
 const delValue2 = arr.pop();
-console.log(delValue2); // el4
+console.log(delValue2); // 'el4'
 ```
 
 #### `push()`
 Добавляет один или более элементов в конец массива и возвращает новую длину массива.
 ```js
 const arr = [];
-const addValue = arr.push('el1', 'el2');
-console.log(addValue); // 2
+const newArr = arr.push('el1', 'el2');
+console.log(newArr); // 2
 ```
 
 #### `reduce()`
@@ -344,10 +345,10 @@ const doubled = arr.reduce((acc, el) => {
 console.log(doubled); // [10, 20, 30]
 
 const bankAccounts = [
-  { id: "123", amount: 19 },
-  { id: "345", amount: 33 },
-  { id: "567", amount: 4 },
-  { id: "789", amount: 20 },
+  { id: '123', amount: 19 },
+  { id: '345', amount: 33 },
+  { id: '567', amount: 4 },
+  { id: '789', amount: 20 },
 ];
 const totalAmount = bankAccounts.reduce((sum, currentAccount) => sum + currentAccount.amount, 0);
 console.log(totalAmount); // 76
@@ -431,4 +432,20 @@ console.log(arr); // ['el1', 'el2', 'el5']
 console.log(delEls); // ['el3', 'el4']
 ```
 
-#### `
+#### `toLocaleString()`
+Возвращает строковое представление элементов массива. Элементы преобразуются в строки с использованием своих собственных методов `toLocaleString` и эти строки разделяются локале-зависимой строкой (например, запятой ",").
+```js
+const arr = [1, 2, 'El', true];
+const output = arr.toLocaleString();
+console.log(output); // '1,2,El,true'
+typeof output; // 'string'
+```
+
+#### `toString()`
+Возвращает строковое представление указанного массива и его элементов безо всяких параметров.
+```js
+const arr = [1, 2, 3, false, 'lastEl'];
+const arrToStr = arr.toString();
+console.log(arrToStr); // '1,2,3,false,lastEl'
+```
+
