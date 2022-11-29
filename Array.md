@@ -425,5 +425,10 @@ const delEls = arr.splice(2, 0, 'newValue1', 'newValue2');
 console.log(arr); // ['el1', 'el2', 'newValue1', 'newValue2', 'el3', 'el4', 'el5']
 console.log(delEls); // []
 
-
+const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
+const delEls = arr.splice(2, 2);
+console.log(arr); // ['el1', 'el2', 'el5']
+console.log(delEls); // ['el3', 'el4']
 ```
+
+#### `
