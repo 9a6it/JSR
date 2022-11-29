@@ -4,10 +4,10 @@
 [**`length`**](#length) | `arr.length`, `arr.length = number`
 [**`at()`**](#at) | `arr.at(i)`
 [**`concat()`**](#concat) | `arr1.concat(arr2*/value1*, arr3*/value2*, ..., arrN*//valueN*)`
-[**`copyWithin()`**](#copywithin) | `arr.copyWithin(startPasteIndex, [startCopyIndex* = 0, endCopyIndexAfter* = arr.length))`
+[**`copyWithin()`**](#copywithin) | `arr.copyWithin(startInsIndex, [startCopyIndex* = 0, endCopyIndexAfter* = arr.length))`
 [**`entries()`**](#entries) | `arr.entries()`
 [**`every()`**](#every) | `arr.every((el, i*, arr*) => { ... })`
-[**`fill()`**](#fill) | `arr.fill(value, [startPasteIndex* = 0, endPasteIndexAfter* = arr.length))`
+[**`fill()`**](#fill) | `arr.fill(value, [startInsIndex* = 0, endInsIndexAfter* = arr.length))`
 [**`filter()`**](#filter) | `arr.filter((el, i*, arr*) => { ... })`
 [**`find()`**](#find) | `arr.find((el, i*, arr*) => { ... })`
 [**`findIndex()`**](#findindex) | `arr.findIndex((el, i*, arr*) => { ... })`
@@ -33,6 +33,9 @@
 [**`shift()`**](#shift) | `arr.shift()`
 [**`slice()`**](#slice) | `arr.slice(startCopyIndex* = 0, endCopyIndexAfter* = arr.length)`
 [**`some()`**](#some) | `arr.some((el, i*, arr*) => { ... })`
+[**`sort()`**](#sort) | `arr.sort(compareFn*)`, `arr.sort((a, b) => a - b)`
+[**`splice()`**](#splice) | `arr.splice(startInsOrDelIndex, delQt, insEl1, insEl2, ..., insElN)`
+
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -398,4 +401,29 @@ const hasOneKid = arr.some(el => el < 18);
 console.log(hasOneKid); // true
 ```
 
-#### `
+#### `sort()`
+На месте сортирует элементы массива и возвращает отсортированный массив. Если функция сравнения не предоставляется, элементы сортируются путём преобразования их в строки и сравнения строк в порядке следования кодовых точек Unicode.
+```js
+const arr = ['el1', 'el2', true, false, 1, 0];
+const sortedArr = arr.sort();
+console.log(sortedArr); // [0, 1, 'el1', 'el2', false, true]
+
+const arr = [204, 155, 94, 199, 67];
+const lowToHigh = arr.sort((a, b) => a - b);
+console.log(lowToHigh); // [67, 94, 155, 199, 204]
+
+const arr = [204, 155, 94, 199, 67];
+const highToLow = arr.sort((a, b) => b - a);
+console.log(highToLow); // [204, 199, 155, 94, 67]
+```
+
+#### `splice()`
+Меняет массив за счёт удаления существующих элементов, и/или добавления новых элементов в массив, и возвращает удаленные элементы.
+```js
+const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
+const delEls = arr.splice(2, 0, 'newValue1', 'newValue2');
+console.log(arr); // ['el1', 'el2', 'newValue1', 'newValue2', 'el3', 'el4', 'el5']
+console.log(delEls); // []
+
+
+```
