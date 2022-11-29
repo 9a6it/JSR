@@ -27,11 +27,12 @@
 [**`Array.of()`**](#arrayof) | `Array.of(el1, el2*, ..., elN*)`
 [**`pop()`**](#pop) | `arr.pop()`
 [**`push()`**](#push) | `arr.push(el1, el2*, ..., elN*)`
-[**`reduce()`**](#reduce) | `arr.reduce((total, currentValue, currentIndex*, arr*) => { ... }, initialValue*)`
-[**`reduceRight()`**](#reduceright) | `arr.reduceRight((total, currentValue, currentIndex*, arr*) => { ... }, initialValue*)`
+[**`reduce()`**](#reduce) | `arr.reduce((acc, el, i*, arr*) => { ... }, initValue*)`
+[**`reduceRight()`**](#reduceright) | `arr.reduceRight((acc, el, i*, arr*) => { ... }, initlValue*)`
 [**`reverse()`**](#reverse) | `arr.reverse()`
 [**`shift()`**](#shift) | `arr.shift()`
-[**`slice()`**](#slice) | `arr.slice(startCopyIndex* = 0, endCopyIndex* = arr.length)`
+[**`slice()`**](#slice) | `arr.slice(startCopyIndex* = 0, endCopyIndexAfter* = arr.length)`
+[**`some()`**](#some) | `arr.some((el, i*, arr*) => { ... })`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -183,10 +184,10 @@ console.log(flatArr); // [1, 2, 3, 4, 5, 6]
 ```
 
 #### `forEach()`
-Вызывает функцию один раз для каждого элемента массива по порядку. Не выполняет функцию для элементов массива без значений. А также не возвращает результат выполнения - `undefined`.
+Вызывает функцию один раз для каждого элемента массива по порядку. Не выполняет функцию для элементов массива без значений. А также не возвращает результат выполнения, `undefined`.
 ```js
 const arr = [1, 2, 3, 4, 5];
-arr.forEach(el => console.log(el *2)); // 2, 4, 6, 8, 10
+arr.forEach(el => console.log(el * 2)); // 2, 4, 6, 8, 10
 ```
 
 #### `from()`
@@ -379,3 +380,22 @@ console.log(arr); // ['el2', 'el3', 'el4', 'el5']
 
 #### `slice()`
 Возвращает новый массив, содержащий копию части исходного массива.
+```js
+const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
+const newArr = arr.slice();
+console.log(newArr); // ['el1', 'el2', 'el3', 'el4', 'el5']
+
+const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
+const newArr = arr.slice(1, 4);
+console.log(newArr); // ['el2', 'el3', 'el4']
+```
+
+#### `some()`
+Проверяет, удовлетворяет ли какой-либо элемент массива условию, заданному в передаваемой функции. Возвращает `true` и останавливается, если функция возвращает `true` для одного из элементов массива или возвращает `false`, если функция возвращает `false` для всех элементов массива. Также возвращает `false` при любом условии для пустого массива.
+```js
+const arr = [18, 21, 31, 14, 25];
+const hasOneKid = arr.some(el => el < 18);
+console.log(hasOneKid); // true
+```
+
+#### `
