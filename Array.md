@@ -37,6 +37,8 @@
 [**`splice()`**](#splice) | `arr.splice(startInsOrDelIndex, delQt, insEl1, insEl2, ..., insElN)`
 [**`toLocaleString()`**](#tolocalestring) | `arr.toLocaleString(locales*, options*)`
 [**`toString()`**](#tostring) | `arr.toString()`
+[**`unshift()`**](#unshift) | `arr.unshift(el1, el2*, ..., elN*)`
+[**`values()`**](#values) | `arr.values()`
 
 #### `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -442,10 +444,29 @@ typeof output; // 'string'
 ```
 
 #### `toString()`
-Возвращает строковое представление указанного массива и его элементов безо всяких параметров.
+Возвращает строковое представление элементов массива безо всяких параметров.
 ```js
 const arr = [1, 2, 3, false, 'lastEl'];
 const arrToStr = arr.toString();
 console.log(arrToStr); // '1,2,3,false,lastEl'
 ```
 
+#### `unshift()`
+Добавляет переданные элементы в начало массива и возвращает новую длину массива.
+```js
+const arr = ['el1', 'el2', 'el3'];
+const newLength = arr.unshift('newValue');
+console.log(newLength); // 4
+console.log(arr); // ['newValue', 'el1', 'el2', 'el3']
+```
+
+#### `values()`
+Возвращает итератор массива `Array Iterator`, содержащий значения для каждого индекса в массиве.
+```js
+const arr = ['el1', 'el2', 'el3'];;
+const iterator = arr.values();
+console.log(iterator); // Array Iterator {}
+console.log(iterator.next().value); // el1
+console.log(iterator.next().value); // el2
+console.log(iterator.next().value); // el3
+```
