@@ -1,4 +1,4 @@
-[**JSR**](README.md) / **Array**
+[:book:](README.md) / **Array**
 
 Свойство / Метод | Синтаксис
 :--- | :---
