@@ -1,3 +1,5 @@
+[**JSR**](README.md) / **Array**
+
 Свойство / Метод | Синтаксис
 :--- | :---
 [**`constructor`**](#constructor) | `arr.constructor`
