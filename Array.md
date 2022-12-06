@@ -5,11 +5,11 @@
 [**`constructor`**](#constructor) | `arr.constructor`
 [**`length`**](#length) | `arr.length`, `arr.length = number`
 [**`at()`**](#at) | `arr.at(i)`
-[**`concat()`**](#concat) | `arr1.concat(arr2*/value1*, arr3*/value2*, ..., arrN*//valueN*)`
-[**`copyWithin()`**](#copywithin) | `arr.copyWithin(startInsIndex, [startCopyIndex* = 0, endCopyIndexAfter* = arr.length))`
+[**`concat()`**](#concat) | `arr1.concat(arr2*/val1*, arr3*/val2*, ..., arrN*/valN*)`
+[**`copyWithin()`**](#copywithin) | `arr.copyWithin(startInsertIndex, [startCopyIndex* = 0, endCopyIndexAfter* = arr.length))`
 [**`entries()`**](#entries) | `arr.entries()`
 [**`every()`**](#every) | `arr.every((el, i*, arr*) => { ... })`
-[**`fill()`**](#fill) | `arr.fill(value, [startInsIndex* = 0, endInsIndexAfter* = arr.length))`
+[**`fill()`**](#fill) | `arr.fill(value, [startInsertIndex* = 0, endInsertIndexAfter* = arr.length))`
 [**`filter()`**](#filter) | `arr.filter((el, i*, arr*) => { ... })`
 [**`find()`**](#find) | `arr.find((el, i*, arr*) => { ... })`
 [**`findIndex()`**](#findindex) | `arr.findIndex((el, i*, arr*) => { ... })`
@@ -18,7 +18,7 @@
 [**`flat()`**](#flat) | `arr.flat(depth*)`
 [**`flatMap()`**](#flatmap) | `arr.flatMap((el, i*, arr*) => { ... })`
 [**`forEach()`**](#foreach) | `arr.forEach((el, i*, arr*) => { ... })`
-[**`from()`**](#from) | `Array.from(arr)`, `Array.from(arr, (el*, i*) => { ... })`
+[**`from()`**](#from) | `Array.from(target)`, `Array.from(target, (el*, i*) => { ... })`
 [**`includes()`**](#includes) | `arr.includes(searchElement, startSearchIndex* = 0)`
 [**`indexOf()`**](#indexof) | `arr.indexOf(searchElement, startSearchIndex* = 0)`
 [**`Array.isArray()`**](#arrayisarray) | `Array.isArray(target)`
@@ -29,14 +29,14 @@
 [**`Array.of()`**](#arrayof) | `Array.of(el1, el2*, ..., elN*)`
 [**`pop()`**](#pop) | `arr.pop()`
 [**`push()`**](#push) | `arr.push(el1, el2*, ..., elN*)`
-[**`reduce()`**](#reduce) | `arr.reduce((acc, el, i*, arr*) => { ... }, initValue*)`
-[**`reduceRight()`**](#reduceright) | `arr.reduceRight((acc, el, i*, arr*) => { ... }, initlValue*)`
+[**`reduce()`**](#reduce) | `arr.reduce((acc, el, i*, arr*) => { ... }, initialValue*)`
+[**`reduceRight()`**](#reduceright) | `arr.reduceRight((acc, el, i*, arr*) => { ... }, initialValue*)`
 [**`reverse()`**](#reverse) | `arr.reverse()`
 [**`shift()`**](#shift) | `arr.shift()`
 [**`slice()`**](#slice) | `arr.slice(startCopyIndex* = 0, endCopyIndexAfter* = arr.length)`
 [**`some()`**](#some) | `arr.some((el, i*, arr*) => { ... })`
-[**`sort()`**](#sort) | `arr.sort(compareFn*)`, `arr.sort((a, b) => a - b)`
-[**`splice()`**](#splice) | `arr.splice(startInsOrDelIndex, delQt, insEl1, insEl2, ..., insElN)`
+[**`sort()`**](#sort) | `arr.sort(compareFunction*)`, `arr.sort((a, b) => a - b)`, `arr.sort((a, b) => b - a)`
+[**`splice()`**](#splice) | `arr.splice(startInsertOrDeleteIndex, deleteQuantity, insertElement1, insertElement2, ..., insertElementN)`
 [**`toLocaleString()`**](#tolocalestring) | `arr.toLocaleString(locales*, options*)`
 [**`toString()`**](#tostring) | `arr.toString()`
 [**`unshift()`**](#unshift) | `arr.unshift(el1, el2*, ..., elN*)`
