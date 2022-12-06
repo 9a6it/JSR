@@ -9,7 +9,7 @@
 [**`copyWithin()`**](#copywithin) | `arr.copyWithin(startInsertIndex, [startCopyIndex* = 0, endCopyIndexAfter* = arr.length))`
 [**`entries()`**](#entries) | `arr.entries()`
 [**`every()`**](#every) | `arr.every((el, i*, arr*) => { ... })`
-[**`fill()`**](#fill) | `arr.fill(value, [startInsertIndex* = 0, endInsertIndexAfter* = arr.length))`
+[**`fill()`**](#fill) | `arr.fill(val, [startInsertIndex* = 0, endInsertIndexAfter* = arr.length))`
 [**`filter()`**](#filter) | `arr.filter((el, i*, arr*) => { ... })`
 [**`find()`**](#find) | `arr.find((el, i*, arr*) => { ... })`
 [**`findIndex()`**](#findindex) | `arr.findIndex((el, i*, arr*) => { ... })`
