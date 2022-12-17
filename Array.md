@@ -2,6 +2,10 @@
 
 Свойство / Метод | Синтаксис
 :--- | :---
+[**`Array.from()`**](#top-arrayfrom) | `Array.from(target)`, `Array.from(target, (el*, i*) => { ... })`
+[**`Array.isArray()`**](#top-arrayisarray) | `Array.isArray(target)`
+[**`Array.of()`**](#top-arrayof) | `Array.of(el1, el2*, ..., elN*)`
+[**`Array.prototype`**](#top-arrayprototype) | `Array.prototype.customPropertyOrMethodName = theCode`
 [**`constructor`**](#top-constructor) | `arr.constructor`
 [**`length`**](#top-length) | `arr.length`, `arr.length = number`
 [**`at()`**](#top-at) | `arr.at(i)`
@@ -18,15 +22,12 @@
 [**`flat()`**](#top-flat) | `arr.flat(depth*)`
 [**`flatMap()`**](#top-flatmap) | `arr.flatMap((el, i*, arr*) => { ... })`
 [**`forEach()`**](#top-foreach) | `arr.forEach((el, i*, arr*) => { ... })`
-[**`from()`**](#top-from) | `Array.from(target)`, `Array.from(target, (el*, i*) => { ... })`
 [**`includes()`**](#top-includes) | `arr.includes(searchElement, startSearchIndex* = 0)`
 [**`indexOf()`**](#top-indexof) | `arr.indexOf(searchElement, startSearchIndex* = 0)`
-[**`Array.isArray()`**](#top-arrayisarray) | `Array.isArray(target)`
 [**`join()`**](#top-join) | `arr.join(separator*)`
 [**`keys()`**](#top-keys) | `arr.keys()`
 [**`lastIndexOf()`**](#top-lastindexof) | `arr.lastIndexOf(searchElement, startReverseSearchIndex* = arr.length)`
 [**`map()`**](#top-map) | `arr.map((el, i*, arr*) => { ... })`
-[**`Array.of()`**](#top-arrayof) | `Array.of(el1, el2*, ..., elN*)`
 [**`pop()`**](#top-pop) | `arr.pop()`
 [**`push()`**](#top-push) | `arr.push(el1, el2*, ..., elN*)`
 [**`reduce()`**](#top-reduce) | `arr.reduce((acc, el, i*, arr*) => { ... }, initialValue*)`
@@ -41,6 +42,60 @@
 [**`toString()`**](#top-tostring) | `arr.toString()`
 [**`unshift()`**](#top-unshift) | `arr.unshift(el1, el2*, ..., elN*)`
 [**`values()`**](#top-values) | `arr.values()`
+
+####  [**:top:**](#book--array) `Array.from()`
+Возвращает новый массив из массивоподобного (объектов со свойством `length` и элементами по индексным ключам) или итерируемого объектов (объектов, из которых можно достать их элементы, например `Map` или `Set`).
+```js
+const str = 'Text';
+const strToArr = Array.from(str);
+console.log(strToArr); // ['T', 'e', 'x', 't']
+
+var map = new Map([[1, 2], [2, 4], [4, 8]]);
+const mapToArr = Array.from(map);
+console.log(mapToArr); // [[1, 2], [2, 4], [4, 8]]
+
+const set = new Set(['el1', 'el2', 'el3']);
+const setToArr = Array.from(set);
+console.log(setToArr); // ['el1', 'el2', 'el3']
+
+const str = 'ABCDE';
+const indexes = Array.from(str, (el, i) => i);
+console.log(indexes); // [0, 1, 2, 3, 4]
+```
+
+####  [**:top:**](#book--array) `Array.isArray()`
+Возвращает `true`, если объект является массивом и `false`, если он массивом не является.
+```js
+const arr = '1';
+const isArray = Array.isArray(arr);
+console.log(isArray); // false
+```
+
+####  [**:top:**](#book--array) `Array.of()`
+Возвращает новый экземпляр массива `Array` из произвольного числа аргументов, вне зависимости от числа или типа аргумента.
+```js
+const newArr = Array.of(7);
+console.log(newArr); // [7], newArr.length = 1
+
+const newArr = Array.of(1, 2, 3);
+console.log(newArr); // [1, 2, 3], newArr.length = 3
+```
+
+#### [**:top:**](#book--array) `Array.prototype`
+Позволяет добавлять новые свойства и методы к объекту `Array`. При построении свойства все массивы будут задавать свойства и его значение по умолчанию. При построении метода, этот метод будет доступен всем массивам. Может перезатереть встроенные свойства и методы, поэтому нужно быть осторжным с именами.
+```js
+Array.prototype.typeArr = function() {
+  var output = [];
+  for (i = 0; i < this.length; i++) {
+    output[i] = typeof this[i];
+  };
+  return output;
+};
+
+const arr = ['123', 123, true, 'ECMA', [1, 2], { id: 10 }, undefined, null];
+const result = arr.typeArr();
+console.log(result); // ['string', 'number', 'boolean', 'string', 'object', 'object', 'undefined', 'object']
+```
 
 #### [**:top:**](#book--array) `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
@@ -198,26 +253,6 @@ const arr = [1, 2, 3, 4, 5];
 arr.forEach(el => console.log(el * 2)); // 2, 4, 6, 8, 10
 ```
 
-####  [**:top:**](#book--array) `from()`
-Возвращает новый массив из массивоподобного (объектов со свойством `length` и элементами по индексным ключам) или итерируемого объектов (объектов, из которых можно достать их элементы, например `Map` или `Set`).
-```js
-const str = 'Text';
-const strToArr = Array.from(str);
-console.log(strToArr); // ['T', 'e', 'x', 't']
-
-var map = new Map([[1, 2], [2, 4], [4, 8]]);
-const mapToArr = Array.from(map);
-console.log(mapToArr); // [[1, 2], [2, 4], [4, 8]]
-
-const set = new Set(['el1', 'el2', 'el3']);
-const setToArr = Array.from(set);
-console.log(setToArr); // ['el1', 'el2', 'el3']
-
-const str = 'ABCDE';
-const indexes = Array.from(str, (el, i) => i);
-console.log(indexes); // [0, 1, 2, 3, 4]
-```
-
 ####  [**:top:**](#book--array) `includes()`
 Возвращает результат наличия искомого элемента в массиве.
 ```js
@@ -240,14 +275,6 @@ console.log(firstIndexOfElement); // -1
 const arr = [1, true, NaN, 'el4'];
 const firstIndexOfElement = arr.indexOf('el4', 2);
 console.log(firstIndexOfElement); // 3
-```
-
-####  [**:top:**](#book--array) `Array.isArray()`
-Возвращает `true`, если объект является массивом и `false`, если он массивом не является.
-```js
-const arr = '1';
-const isArray = Array.isArray(arr);
-console.log(isArray); // false
 ```
 
 ####  [**:top:**](#book--array) `join()`
@@ -304,16 +331,6 @@ const arr = ['el1', 'el2', 'el3', 'el4', 'el5'];
 const auxArr = arr.map(el => el.charAt(0).toUpperCase() + el.slice(1).toLowerCase());
 const newArr = auxArr.map(el => 'new' + el);
 console.log(newArr); // ['newEl1', 'newEl2', 'newEl3', 'newEl4', 'newEl5']
-```
-
-####  [**:top:**](#book--array) `Array.of()`
-Возвращает новый экземпляр массива `Array` из произвольного числа аргументов, вне зависимости от числа или типа аргумента.
-```js
-const newArr = Array.of(7);
-console.log(newArr); // [7], newArr.length = 1
-
-const newArr = Array.of(1, 2, 3);
-console.log(newArr); // [1, 2, 3], newArr.length = 3
 ```
 
 ####  [**:top:**](#book--array) `pop()`
