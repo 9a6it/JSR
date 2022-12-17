@@ -2,45 +2,45 @@
 
 Свойство / Метод | Синтаксис
 :--- | :---
-[**`constructor`**](#constructor) | `arr.constructor`
-[**`length`**](#length) | `arr.length`, `arr.length = number`
-[**`at()`**](#at) | `arr.at(i)`
-[**`concat()`**](#concat) | `arr1.concat(arr2*/val1*, arr3*/val2*, ..., arrN*/valN*)`
-[**`copyWithin()`**](#copywithin) | `arr.copyWithin(startInsertIndex, [startCopyIndex* = 0, endCopyIndexAfter* = arr.length))`
-[**`entries()`**](#entries) | `arr.entries()`
-[**`every()`**](#every) | `arr.every((el, i*, arr*) => { ... })`
-[**`fill()`**](#fill) | `arr.fill(val, [startInsertIndex* = 0, endInsertIndexAfter* = arr.length))`
-[**`filter()`**](#filter) | `arr.filter((el, i*, arr*) => { ... })`
-[**`find()`**](#find) | `arr.find((el, i*, arr*) => { ... })`
-[**`findIndex()`**](#findindex) | `arr.findIndex((el, i*, arr*) => { ... })`
-[**`findLast()`**](#findlast) | `arr.findLast((el, i*, arr*) => { ... })`
-[**`findLastIndex()`**](#findlastindex) | `arr.findLastIndex((el, i*, arr*) => { ... })`
-[**`flat()`**](#flat) | `arr.flat(depth*)`
-[**`flatMap()`**](#flatmap) | `arr.flatMap((el, i*, arr*) => { ... })`
-[**`forEach()`**](#foreach) | `arr.forEach((el, i*, arr*) => { ... })`
-[**`from()`**](#from) | `Array.from(target)`, `Array.from(target, (el*, i*) => { ... })`
-[**`includes()`**](#includes) | `arr.includes(searchElement, startSearchIndex* = 0)`
-[**`indexOf()`**](#indexof) | `arr.indexOf(searchElement, startSearchIndex* = 0)`
-[**`Array.isArray()`**](#arrayisarray) | `Array.isArray(target)`
-[**`join()`**](#join) | `arr.join(separator*)`
-[**`keys()`**](#keys) | `arr.keys()`
-[**`lastIndexOf()`**](#lastindexof) | `arr.lastIndexOf(searchElement, startReverseSearchIndex* = arr.length)`
-[**`map()`**](#map) | `arr.map((el, i*, arr*) => { ... })`
-[**`Array.of()`**](#arrayof) | `Array.of(el1, el2*, ..., elN*)`
-[**`pop()`**](#pop) | `arr.pop()`
-[**`push()`**](#push) | `arr.push(el1, el2*, ..., elN*)`
-[**`reduce()`**](#reduce) | `arr.reduce((acc, el, i*, arr*) => { ... }, initialValue*)`
-[**`reduceRight()`**](#reduceright) | `arr.reduceRight((acc, el, i*, arr*) => { ... }, initialValue*)`
-[**`reverse()`**](#reverse) | `arr.reverse()`
-[**`shift()`**](#shift) | `arr.shift()`
-[**`slice()`**](#slice) | `arr.slice(startCopyIndex* = 0, endCopyIndexAfter* = arr.length)`
-[**`some()`**](#some) | `arr.some((el, i*, arr*) => { ... })`
-[**`sort()`**](#sort) | `arr.sort(compareFunction*)`, `arr.sort((a, b) => a - b)`, `arr.sort((a, b) => b - a)`
-[**`splice()`**](#splice) | `arr.splice(startInsertOrDeleteIndex, deleteQuantity, insertElement1, insertElement2, ..., insertElementN)`
-[**`toLocaleString()`**](#tolocalestring) | `arr.toLocaleString(locales*, options*)`
-[**`toString()`**](#tostring) | `arr.toString()`
-[**`unshift()`**](#unshift) | `arr.unshift(el1, el2*, ..., elN*)`
-[**`values()`**](#values) | `arr.values()`
+[**`constructor`**]([#constructor](#top-constructor) | `arr.constructor`
+[**`length`**](#top-length) | `arr.length`, `arr.length = number`
+[**`at()`**](#top-at) | `arr.at(i)`
+[**`concat()`**](#top-concat) | `arr1.concat(arr2*/val1*, arr3*/val2*, ..., arrN*/valN*)`
+[**`copyWithin()`**](#top-copywithin) | `arr.copyWithin(startInsertIndex, [startCopyIndex* = 0, endCopyIndexAfter* = arr.length))`
+[**`entries()`**](#top-entries) | `arr.entries()`
+[**`every()`**](#top-every) | `arr.every((el, i*, arr*) => { ... })`
+[**`fill()`**](#top-fill) | `arr.fill(val, [startInsertIndex* = 0, endInsertIndexAfter* = arr.length))`
+[**`filter()`**](#top-filter) | `arr.filter((el, i*, arr*) => { ... })`
+[**`find()`**](#top-find) | `arr.find((el, i*, arr*) => { ... })`
+[**`findIndex()`**](#top-findindex) | `arr.findIndex((el, i*, arr*) => { ... })`
+[**`findLast()`**](#top-findlast) | `arr.findLast((el, i*, arr*) => { ... })`
+[**`findLastIndex()`**](#top-findlastindex) | `arr.findLastIndex((el, i*, arr*) => { ... })`
+[**`flat()`**](#top-flat) | `arr.flat(depth*)`
+[**`flatMap()`**](#top-flatmap) | `arr.flatMap((el, i*, arr*) => { ... })`
+[**`forEach()`**](#top-foreach) | `arr.forEach((el, i*, arr*) => { ... })`
+[**`from()`**](#top-from) | `Array.from(target)`, `Array.from(target, (el*, i*) => { ... })`
+[**`includes()`**](#top-includes) | `arr.includes(searchElement, startSearchIndex* = 0)`
+[**`indexOf()`**](#top-indexof) | `arr.indexOf(searchElement, startSearchIndex* = 0)`
+[**`Array.isArray()`**](#top-arrayisarray) | `Array.isArray(target)`
+[**`join()`**](#top-join) | `arr.join(separator*)`
+[**`keys()`**](#top-keys) | `arr.keys()`
+[**`lastIndexOf()`**](#top-lastindexof) | `arr.lastIndexOf(searchElement, startReverseSearchIndex* = arr.length)`
+[**`map()`**](#top-map) | `arr.map((el, i*, arr*) => { ... })`
+[**`Array.of()`**](#top-arrayof) | `Array.of(el1, el2*, ..., elN*)`
+[**`pop()`**](#top-pop) | `arr.pop()`
+[**`push()`**](#top-push) | `arr.push(el1, el2*, ..., elN*)`
+[**`reduce()`**](#top-reduce) | `arr.reduce((acc, el, i*, arr*) => { ... }, initialValue*)`
+[**`reduceRight()`**](#top-reduceright) | `arr.reduceRight((acc, el, i*, arr*) => { ... }, initialValue*)`
+[**`reverse()`**](#top-reverse) | `arr.reverse()`
+[**`shift()`**](#top-shift) | `arr.shift()`
+[**`slice()`**](#top-slice) | `arr.slice(startCopyIndex* = 0, endCopyIndexAfter* = arr.length)`
+[**`some()`**](#top-some) | `arr.some((el, i*, arr*) => { ... })`
+[**`sort()`**](#top-sort) | `arr.sort(compareFunction*)`, `arr.sort((a, b) => a - b)`, `arr.sort((a, b) => b - a)`
+[**`splice()`**](#top-splice) | `arr.splice(startInsertOrDeleteIndex, deleteQuantity, insertElement1, insertElement2, ..., insertElementN)`
+[**`toLocaleString()`**](#top-tolocalestring) | `arr.toLocaleString(locales*, options*)`
+[**`toString()`**](#top-tostring) | `arr.toString()`
+[**`unshift()`**](#top-unshift) | `arr.unshift(el1, el2*, ..., elN*)`
+[**`values()`**](#top-values) | `arr.values()`
 
 #### [**:top:**](#book--array) `constructor`
 Возвращает `function Array() { [native code] }`. Можно использовать для определения, является ли переменная массивом.
