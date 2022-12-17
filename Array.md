@@ -2,7 +2,7 @@
 
 Свойство / Метод | Синтаксис
 :--- | :---
-[**`constructor`**]([#constructor](#top-constructor) | `arr.constructor`
+[**`constructor`**](#top-constructor) | `arr.constructor`
 [**`length`**](#top-length) | `arr.length`, `arr.length = number`
 [**`at()`**](#top-at) | `arr.at(i)`
 [**`concat()`**](#top-concat) | `arr1.concat(arr2*/val1*, arr3*/val2*, ..., arrN*/valN*)`
