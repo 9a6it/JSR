@@ -5,7 +5,7 @@
 [**`Array.from()`**](#top-arrayfrom) | `Array.from(target)`, `Array.from(target, (el*, i*) => { ... })`
 [**`Array.isArray()`**](#top-arrayisarray) | `Array.isArray(target)`
 [**`Array.of()`**](#top-arrayof) | `Array.of(el1, el2*, ..., elN*)`
-[**`Array.prototype`**](#top-arrayprototype) | `Array.prototype.customPropertyOrMethodName = theCode`
+[**`Array.prototype`**](#top-arrayprototype) | `Array.prototype.customPropertyOrMethodName = IMPLEMENTATION`
 [**`constructor`**](#top-constructor) | `arr.constructor`
 [**`length`**](#top-length) | `arr.length`, `arr.length = number`
 [**`at()`**](#top-at) | `arr.at(i)`
