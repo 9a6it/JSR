@@ -3,3 +3,4 @@
 | :---
 | [**Array**](Array.md)
 | [**Number**](Number.md)
+| [**String**](String.md)
