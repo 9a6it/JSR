@@ -5,6 +5,7 @@
 [**`String.fromCharCode()`**](#top-stringfromcharcode) | `String.fromCharCode(num1, num2*, ..., numN*)`
 [**`String.fromCodePoint()`**](#top-stringfromcodepoint) | `String.fromCodePoint(num1, num2*, ..., numN*)`
 [**`String.raw()`**](#top-stringraw) | `` String.raw`templateString` ``
+[**`at()`**](#top-at) | `str.at(i)`
 
 ####  [**:top:**](#book--string) `String.fromCharCode()`
 Возвращает строку, созданную из указанной последовательности кодовых точек. Допустимый диапозон значений составляет от 0 до 65535 (0xFFFF). Числа больше 0xFFFF будут усечены.
@@ -28,4 +29,12 @@ console.log(strPath); // 'C:UsersGhost' - не то что мы хотели п�
 
 const rawPath = String.raw`C:\Users\Ghost`;
 console.log(rawPath); // 'C:\Users\Ghost'
+```
+
+####  [**:top:**](#book--string) `at()`
+Возвращает символ указанного индекса строки.
+```js
+const str = 'Docker';
+const lastCharacter = str.at(-1);
+console.log(lastCharacter); // 'r'
 ```
