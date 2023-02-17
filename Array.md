@@ -47,44 +47,44 @@
 Возвращает новый массив из массивоподобного (объектов со свойством `length` и элементами по индексным ключам) или итерируемого объектов (объектов, из которых можно достать их элементы, например `Map` или `Set`).
 ```js
 const str = 'Text';
-const strToArr = Array.from(str);
-console.log(strToArr); // ['T', 'e', 'x', 't']
+const arrayFromString = Array.from(str);
+console.log(arrayFromString); // ['T', 'e', 'x', 't']
 
 var map = new Map([[1, 2], [2, 4], [4, 8]]);
-const mapToArr = Array.from(map);
-console.log(mapToArr); // [[1, 2], [2, 4], [4, 8]]
+const arrayFromMap = Array.from(map);
+console.log(arrayFromMap); // [[1, 2], [2, 4], [4, 8]]
 
 const set = new Set(['el1', 'el2', 'el3']);
-const setToArr = Array.from(set);
-console.log(setToArr); // ['el1', 'el2', 'el3']
+const arrayFromSet = Array.from(set);
+console.log(arrayFromSet); // ['el1', 'el2', 'el3']
 
 const str = 'ABCDE';
-const indexes = Array.from(str, (el, i) => i);
-console.log(indexes); // [0, 1, 2, 3, 4]
+const i = Array.from(str, (el, i) => i);
+console.log(i); // [0, 1, 2, 3, 4]
 ```
 
 ####  [**:top:**](#book--array) `Array.isArray()`
 Возвращает `true`, если объект является массивом и `false`, если он массивом не является.
 ```js
 const arr = '1';
-const isArray = Array.isArray(arr);
-console.log(isArray); // false
+const ifArray = Array.isArray(arr);
+console.log(ifArray); // false
 ```
 
 ####  [**:top:**](#book--array) `Array.of()`
 Возвращает новый экземпляр массива `Array` из произвольного числа аргументов, вне зависимости от числа или типа аргумента.
 ```js
-const newArr = Array.of(7);
-console.log(newArr); // [7], newArr.length = 1
+const newArray = Array.of(7);
+console.log(newArray); // [7]
 
-const newArr = Array.of(1, 2, 3);
-console.log(newArr); // [1, 2, 3], newArr.length = 3
+const newArray = Array.of(1, 2, 'el3');
+console.log(newArray); // [1, 2, 'el3']
 ```
 
 #### [**:top:**](#book--array) `Array.prototype`
 Позволяет добавлять новые свойства и методы к объекту `Array`. При построении свойства все массивы будут задавать свойства и его значение по умолчанию. При построении метода, этот метод будет доступен всем массивам. Может перезатереть встроенные свойства и методы, поэтому нужно быть осторжным с именами.
 ```js
-Array.prototype.typeArr = function() {
+Array.prototype.typesOfElements = function() {
   var output = [];
   for (i = 0; i < this.length; i++) {
     output[i] = typeof this[i];
@@ -93,7 +93,7 @@ Array.prototype.typeArr = function() {
 };
 
 const arr = ['123', 123, true, 'ECMA', [1, 2], { id: 10 }, undefined, null];
-const result = arr.typeArr();
+const result = arr.typesOfElements();
 console.log(result); // ['string', 'number', 'boolean', 'string', 'object', 'object', 'undefined', 'object']
 ```
 
