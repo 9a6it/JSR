@@ -109,8 +109,8 @@ console.log(constructor); // function Array() { [native code] }
 Возвращает или устанавливает (меняет исходный массив) количество элементов в массиве.
 ```js
 const arr = ['el1', 'el2', 'el3'];
-const length = arr.length;
-console.log(length); // 3
+const arrayLength = arr.length;
+console.log(arrayLength); // 3
 
 const arr = ['el1', 'el2', 'el3'];
 arr.length = 2;
@@ -121,8 +121,8 @@ console.log(arr); // ['el1', 'el2']
 Возвращает элемент массива с заданным индексом.
 ```js
 const arr = ['el1', 'el2', 'el3'];
-const lastEl = arr.at(-1);
-console.log(lastEl); // 'el3'
+const lastElement = arr.at(-1);
+console.log(lastElement); // 'el3'
 ```
 
 ####  [**:top:**](#book--array) `concat()`
@@ -131,8 +131,8 @@ console.log(lastEl); // 'el3'
 const arr1 = ['el1', 'el2', 'el3'];
 const arr2 = [1, 2, 3];
 const arr3 = [true, false];
-const newArr = arr1.concat(arr2, arr3, 'newEl');
-console.log(newArr); // ['el1', 'el2', 'el3', 1, 2, 3, true, false, 'newEl']
+const newArray = arr1.concat(arr2, arr3, 'elN');
+console.log(newArray); // ['el1', 'el2', 'el3', 1, 2, 3, true, false, 'elN']
 ```
 
 ####  [**:top:**](#book--array) `copyWithin()`
@@ -157,8 +157,8 @@ console.log(arr); // ['el1', 'el3', 'el3', 'el4', 'el5']
 const arr = ['el1', 'el2', 'el3'];
 const iterator = arr.entries();
 console.log(iterator); // Array Iterator {}
-for (let item of iterator) {
-  console.log(item); // [0, 'el1'] [1, 'el2'] [2, 'el3']
+for (let el of iterator) {
+  console.log(el); // [0, 'el1'] [1, 'el2'] [2, 'el3']
 }
 ```
 
