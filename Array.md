@@ -67,8 +67,8 @@ console.log(i); // [0, 1, 2, 3, 4]
 Возвращает `true`, если объект является массивом и `false`, если он массивом не является.
 ```js
 const arr = '1';
-const ifArray = Array.isArray(arr);
-console.log(ifArray); // false
+const isArray = Array.isArray(arr);
+console.log(isArray); // false
 ```
 
 ####  [**:top:**](#book--array) `Array.of()`
